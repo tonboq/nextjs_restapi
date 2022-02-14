@@ -14,14 +14,14 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
 class PostSerialiser(serializers.ModelSerializer):
-    created_at = serializers.DateTimeField(format="%Y-%m-%d %H %M %S", read_only=True)
+    created_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S", read_only=True)
 
     class Meta:
         model = Post
         fields = ('id', 'title', 'content', 'created_at')
 
 class TaskSerialiser(serializers.ModelSerializer):
-    created_at = serializers.DateTimeField(format="%Y-%m-%d %H %M %S", read_only=True)
+    created_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M:%S", read_only=True)
 
     class Meta:
         model = Task
