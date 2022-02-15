@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 from datetime import timedelta
 from decouple import config
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api.apps.ApiConfig',
     'corsheaders',
-    'djoser'
+    'djoser',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +141,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = str(BASE_DIR / 'staticfiles')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'image')
+MEDIA_URL = '/api/image/'
